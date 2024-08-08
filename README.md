@@ -27,14 +27,14 @@ Other considered modules:
 - Model-based testing module with support for linear temporal logic and parallel execution.
 - Time module
 - Web module
-- Test Data Builder module: Use arbitraries for generating example data for example-based tests
+- Test Data Builder module: Use arbitraries for generating sample data for example-based tests
 
 
 ### Core
 
 - Allows to create _arbitraries_ of fundamental types and to map, filter and compose them.
 
-- Allows to generate values from arbitraries by providing a generation source.
+- Allows to generate values (samples) from arbitraries by providing a generation source.
   The generation source can be a pseudo-random one or represent the recording of a previously generated random source.
 
 - Provides the capability of specifying _properties_ for certain pieces of code.
@@ -42,11 +42,13 @@ Other considered modules:
 - Allows to validate properties by executing them.
 
 - Validating properties can be done in many different and configurable ways,
-  e.g. by generating random sets of input data with a fixed number of tries - or trying all possible values unless a max duration is reached.
+  e.g. by generating random sets of input data (samples) with a fixed number of tries - or trying all possible values unless a max duration is reached.
   Validation can be successful, failed or aborted.
-  A failed validation will also report all or a subset of falsifying examples that have been identified.
+  A failed validation will also report all or a subset of falsifying samples that have been identified.
 
-- Validating a property can be a statistical process, e.g. "validation must succeed in 95% of all tries".
+- Statistical validation must be possible, e.g. "Succeed in 95% of all tries".
+
+- Checking the distribution of generated values as part of invariants.
 
 - It must be possible to change the default configuration for validating properties in a straightforward way.
 
@@ -58,6 +60,14 @@ Other considered modules:
 - Provide all necessary annotations to use Jqwik 2 just like Jqwik 1.
 
 - Stick to Jqwik 1 names where reasonable, and deviate where necessary.
+
+### JUnit Jupiter Extension
+
+- Provide extension with lifecycle hooks for property validation and replay of failed samples
+
+- Hook into Jupiter logging and reporting
+
+- Use JUnit Platform configuration
  
 
 ## Glossary
@@ -72,7 +82,7 @@ Other considered modules:
   3. The code under test
   4. The invariants and postconditions that must hold.
      Invariants and postconditions are often expressed by _assertions_ within the code under test.
- 
-  If one or more invariants fail in a _try_ (or a statistically relevant number of tries), the property is considered to be falsified.
+
+- **Sample**: The concrete set of values used in one _try_.
 
 - **Try**: A single execution of a property with a specific set of test data.
