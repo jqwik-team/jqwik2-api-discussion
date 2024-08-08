@@ -1,4 +1,4 @@
-# jqwik2-api-discussion
+# Jqwik 2 API Discussion
 
 Let's discuss and figure out some aspects of the new Jqwik 2 API
 
@@ -27,6 +27,7 @@ Other considered modules:
 - Model-based testing module with support for linear temporal logic and parallel execution.
 - Time module
 - Web module
+- Test Data Builder module: Use arbitraries for generating example data for example-based tests
 
 
 ### Core
@@ -38,17 +39,18 @@ Other considered modules:
 
 - Provides the capability of specifying _properties_ for certain pieces of code.
 
-- Allows to evaluate properties through executing them.
+- Allows to validate properties by executing them.
 
-- Evaluating properties can be done in many different and configurable ways,
-  e.g. by generating random sets of input data a fixed number of times - or trying all possible values unless a max duration is reached.
-  Evaluation reports if a property could be falsified or not, and which falsifying examples have been identified.
+- Validating properties can be done in many different and configurable ways,
+  e.g. by generating random sets of input data with a fixed number of tries - or trying all possible values unless a max duration is reached.
+  Validation can be successful, failed or aborted.
+  A failed validation will also report all or a subset of falsifying examples that have been identified.
 
-- Evaluating a property can be a statistical process, e.g. "the property must hold for 95% of all examples".
+- Validating a property can be a statistical process, e.g. "validation must succeed in 95% of all tries".
 
-- It must be possible to change the default configuration for evaluating properties in a straightforward way.
+- It must be possible to change the default configuration for validating properties in a straightforward way.
 
-- It must be possible to change the configuration of a specific property.
+- It must be possible to change the validation configuration for a specific property concisely.
 
 
 ### JUnit Platform Engine
@@ -60,5 +62,17 @@ Other considered modules:
 
 ## Glossary
 
-- *Arbitrary*: A composable abstraction of arbitrary values of a given type.
+- **Arbitrary**: A composable abstraction of arbitrary values of a given type.
   An arbitrary includes all constraints that reduce the set of all possible values.
+
+- **Property**: The four main aspects of a property are...
+
+  1. The arbitraries describing the input data
+  2. An optional set of additional preconditions to make the property meaningful
+  3. The code under test
+  4. The invariants and postconditions that must hold.
+     Invariants and postconditions are often expressed by _assertions_ within the code under test.
+ 
+  If one or more invariants fail in a _try_ (or a statistically relevant number of tries), the property is considered to be falsified.
+
+- **Try**: A single execution of a property with a specific set of test data.
