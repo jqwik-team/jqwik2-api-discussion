@@ -1,10 +1,13 @@
 # Jqwik 2 API Discussion
 
-Let's discuss and figure out some aspects of the new Jqwik 2 API
+Let's discuss and figure out some aspects of the new Jqwik 2 API.
 
 Jqwik 2 will - in some areas - have a different or re-worked API from jqwik 1.
 It's not going to be backwards-compatible. 
 Nevertheless, it shouldn't be different just for the sake of being different.
+
+Many of the implementation challenges for Jqwik 2 have already been successfully tackled in a [proof of concept](https://github.com/jqwik-team/jqwik2-poc),
+but the API is open for discussion.
 
 ## API principles
 
