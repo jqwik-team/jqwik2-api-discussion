@@ -35,28 +35,7 @@ Other considered modules:
 
 ### Core
 
-- Allows to create _arbitraries_ of fundamental types and to map, filter and compose them.
-
-- Allows to generate values (samples) from arbitraries by providing a generation source.
-  The generation source can be a pseudo-random one or represent the recording of a previously generated random source.
-
-- Provides the capability of specifying _properties_ for certain pieces of code.
-
-- Allows to validate properties by executing them.
-
-- Validating properties can be done in many different and configurable ways,
-  e.g. by generating random sets of input data (samples) with a fixed number of tries - or trying all possible values unless a max duration is reached.
-  Validation can be successful, failed or aborted.
-  A failed validation will also report all or a subset of falsifying samples that have been identified.
-
-- Statistical validation must be possible, e.g. "Succeed in 95% of all tries".
-
-- Checking the distribution of generated values as part of invariants.
-
-- It must be possible to change the default configuration for validating properties in a straightforward way.
-
-- It must be possible to change the validation configuration for a specific property concisely.
-
+See [core module](./core-module.md).
 
 ### JUnit Platform Engine
 
