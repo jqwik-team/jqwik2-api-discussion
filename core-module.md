@@ -12,7 +12,7 @@ Ideally, the only dependencies are `org.opentest4j` and `org.apiguardian`.
 - [Basic interfaces for arbitraries and generators](https://github.com/jqwik-team/jqwik2-api-discussion/issues/1),
   which allow to map, filter and transform them.
 
-- Create _arbitraries_ of fundamental types.
+- [Create _arbitraries_ of fundamental types](https://github.com/jqwik-team/jqwik2-api-discussion/issues/2).
 
 - Compose several arbitraries into new ones.
 
