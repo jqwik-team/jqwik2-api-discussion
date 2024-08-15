@@ -19,9 +19,7 @@ Ideally, the only dependencies are `org.opentest4j` and `org.apiguardian`.
 - Generate values (samples) from arbitraries by providing a generation source.
   The generation source can be a pseudo-random one or represent the recording of a previously generated random source.
 
-- Specifying _properties_ for certain pieces of code.
-
-- Validate properties by executing them.
+- Specifying _properties_ and validating them by running code.
 
 - Validating properties can be done in many different and configurable ways,
   e.g. by generating random sets of input data (samples) with a fixed number of tries - or trying all possible values unless a max duration is reached.
