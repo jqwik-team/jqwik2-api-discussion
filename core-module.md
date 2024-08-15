@@ -16,20 +16,16 @@ Ideally, the only dependencies are `org.opentest4j` and `org.apiguardian`.
 
 - [Compose several arbitraries](https://github.com/jqwik-team/jqwik2-api-discussion/issues/3) into new ones.
 
-- Generate values (samples) from arbitraries by providing a generation source.
+- [Specifying _properties_ and validating](https://github.com/jqwik-team/jqwik2-api-discussion/issues/4) them by running code.
+
+- Since property validation is highly configurable, the validation result must contain and report a lot of details
+  to allow proper interpretation. 
+  Also, a failed validation must report all or a subset of falsifying samples that have been identified.
+
+- Generate values (samples) from arbitraries directly by providing a generation source.
   The generation source can be a pseudo-random one or represent the recording of a previously generated random source.
-
-- Specifying _properties_ and validating them by running code.
-
-- Validating properties can be done in many different and configurable ways,
-  e.g. by generating random sets of input data (samples) with a fixed number of tries - or trying all possible values unless a max duration is reached.
-  Validation can be successful, failed or aborted.
-  A failed validation will also report all or a subset of falsifying samples that have been identified.
-
-- Statistical validation must be possible, e.g. "Succeed in 95% of all tries".
 
 - Check the distribution of generated values as part of invariants.
 
 - Change the default configuration for validating properties in a straightforward way.
 
-- Change the validation configuration for a specific property concisely.
