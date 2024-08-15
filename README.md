@@ -59,12 +59,16 @@ See [core module](./core-module.md).
 
 - **Property**: The four main aspects of a property are...
 
-  1. The arbitraries describing the input data
-  2. An optional set of additional preconditions to make the property meaningful
-  3. The code under test
-  4. The invariants and postconditions that must hold.
+  1. The arbitraries describing the input data, including boundaries and other constraints from the domain.
+  2. An optional set of additional preconditions - called **assumptions** - that make the property meaningful.
+  4. The code under test
+  5. The invariants and postconditions that must hold.
      Invariants and postconditions are often expressed by _assertions_ within the code under test.
 
-- **Sample**: The concrete set of values used in one _try_.
+- **Property Validation**: Running a property's _code under test_ with _samples_ that comply with the _preconditions_.
+  Validation is successful if invariants and postconditions hold in all runs.
+  **Statistical Validation** can weaken the "all runs" rule by requiring only a certain percentage of runs to comply with invariants.
+
+- **Sample**: The concrete set of values used in one _try_. The sample must follow all preconditions.
 
 - **Try**: A single execution of a property with a specific set of test data.
