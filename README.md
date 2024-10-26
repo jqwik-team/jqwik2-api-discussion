@@ -51,6 +51,17 @@ See [core module](./core-module.md).
 
 - Use JUnit Platform configuration
  
+## API Discussion
+
+Discussion about specific API questions is happen through [issues](https://github.com/jqwik-team/jqwik2-api-discussion/issues) 
+
+Open discussions are:
+
+- [Arbitraries, Generators and Transformations](https://github.com/jqwik-team/jqwik2-api-discussion/issues/1)
+- [Creating Arbitraries of Fundamental Types](https://github.com/jqwik-team/jqwik2-api-discussion/issues/2)
+- [Combining Arbitraries](https://github.com/jqwik-team/jqwik2-api-discussion/issues/3)
+- [Specifying and Validating Properties](https://github.com/jqwik-team/jqwik2-api-discussion/issues/4)
+- [Package naming scheme](https://github.com/jqwik-team/jqwik2-api-discussion/issues/5)
 
 ## Glossary
 
