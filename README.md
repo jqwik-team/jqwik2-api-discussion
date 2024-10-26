@@ -53,7 +53,7 @@ See [core module](./core-module.md).
  
 ## API Discussion
 
-Discussion about specific API questions is happen through [issues](https://github.com/jqwik-team/jqwik2-api-discussion/issues) 
+Discussion about specific API questions is happening in [issues](https://github.com/jqwik-team/jqwik2-api-discussion/issues) 
 
 Open discussions are:
 
